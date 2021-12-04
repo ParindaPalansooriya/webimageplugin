@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
+import 'package:loading_indicator/loading_indicator.dart';
 import 'package:path_provider/path_provider.dart';
 
 Widget WebImage(String? url,{
@@ -43,8 +43,14 @@ Widget WebImage(String? url,{
       isFirst =false;
     }
     if(file==null){
-      return SizedBox(width: width,height: height,child: SizedBox(width: size,height: size,child:  Center(
-        child: Lottie.asset("assets/image/loading.json"),
+      return SizedBox(width: width,height: height,child: SizedBox(width: size,height: size,child:  const Center(
+        child: LoadingIndicator(
+            indicatorType: Indicator.ballScale,
+            colors: [Colors.grey],
+            strokeWidth: 2,
+            backgroundColor: Colors.transparent,
+            pathBackgroundColor: Colors.transparent
+        ),
       )));
     }else{
       return Image.file(file!,

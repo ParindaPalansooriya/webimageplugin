@@ -27,7 +27,7 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: WebImage("https://images.pexels.com/photos/163016/crash-test-collision-60-km-h-distraction-163016.jpeg",width: 20,height: 100),
+          child: WebImage("https://images.pexels.com/photos/163016/crash-test-collision-60-km-h-distraction-163016.jpeg"),
         ),
       ),
     );
